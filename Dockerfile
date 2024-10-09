@@ -4,7 +4,7 @@ FROM alpine:latest as rclone
 ADD https://downloads.rclone.org/rclone-current-linux-arm64.zip /
 RUN unzip rclone-current-linux-arm64.zip && mv rclone-*-linux-arm64/rclone /bin/rclone && chmod +x /bin/rclone
 
-FROM FROM --platform=linux/arm64 restic/restic:0.16.0
+FROM --platform=linux/arm64 restic/restic:0.16.0
 
 RUN apk add --update --no-cache curl mailx
 
